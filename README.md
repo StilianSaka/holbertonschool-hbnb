@@ -55,6 +55,9 @@ Relationships
 
 ## Collaborators
 Name: [Flavio Avdulla](https://github.com/FlavioAvdulla)
+
 Name: [Stilian Saka](https://github.com/StilianSaka)
+
 Name: [Hans Sora](https://github.com/HansSora)
+
 Name: [Gerti Bajo](https://github.com/Gerti23)
