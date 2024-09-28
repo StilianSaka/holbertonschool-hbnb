@@ -37,8 +37,11 @@ In the high-level package diagram, we depict the three main layers of the HBnB E
 - **Presentation Layer**: Handles API calls and user interactions.
 - **Business Logic Layer**: Includes the core business logic and models.
 - **Persistence Layer**: Manages data storage.
+![HBnB---UML_High-Level-Package-Diagram](https://github.com/user-attachments/assets/93069671-84ba-49f8-8da5-8267afaaa727)
+
 ### Detailed Class Diagram for Business Logic Layer
 The class diagram for the Business Logic Layer consists of four main entities:  User, Place, Review, and Amenity. 
+![HBnB---UML](https://github.com/user-attachments/assets/e1a66de0-02e9-497f-a798-87d32d14077e)
 
 Entities
 
