@@ -4,7 +4,7 @@
 ## Context and Objective
 In this phase, we are focusing on documenting the technical architecture of the HBnB Evolution application. This documentation serves to provide a clear understanding of the system's structure, interactions, and design decisions. The HBnB Evolution application will enable users to manage places, reviews, and amenities. This document provides visual representations using UML diagrams to describe the overall architecture and interactions between the layers.
 ## Problem Description
-HBnB Evolution is a simplified AirBnB-like application with the following main operations:
+**HBnB Evolution is a simplified AirBnB-like application with the following main operations**:
 - **User Management**: Users can register, log in, and manage their profiles.
 - **Place Management**: Owners can create, update, and list their properties (places) with details like title, description, and amenities.
 - **Review Management**: Users can leave reviews and ratings for places they have visited.
@@ -28,7 +28,7 @@ Example:
 - **Latitude/Longitude**: Coordinates used to map the place's location.
 ## UML Documentation and Diagrams
 ### High-Level Package Diagram
-The HBnB Evolution application follows a three-layered architecture:
+**The HBnB Evolution application follows a three-layered architecture**:
 - **Presentation Layer**: The user interacts with the system via APIs.
 - functionality such as user registration, place creation, and review management.
 - **Persistence Layer**: Responsible for storing and retrieving data from the database.
@@ -40,7 +40,7 @@ In the high-level package diagram, we depict the three main layers of the HBnB E
 
 ![HBnB---UML_High-Level-Package-Diagram](https://github.com/user-attachments/assets/6e434683-b94d-4a1b-b696-c1f6082d8c47)
 
-### Detailed Class Diagram for Business Logic Layer
+## Detailed Class Diagram for Business Logic Layer
 The class diagram for the Business Logic Layer consists of four main entities:  **User**, **Place**, **Review**, and **Amenity**. 
 
 ![HBnB---UML](https://github.com/user-attachments/assets/e1a66de0-02e9-497f-a798-87d32d14077e)
@@ -52,3 +52,7 @@ Relationships
 - A User can own multiple Places.
 - A Place can have multiple Amenities and multiple Reviews.
 - A Review is associated with a User and a Place.
+
+## Collaborators
+Name: [Flavio Avdulla](FlavioAvdulla)
+Name: Role - Contact Information
