@@ -54,5 +54,7 @@ Relationships
 - A Review is associated with a User and a Place.
 
 ## Collaborators
-Name: [Flavio Avdulla](FlavioAvdulla)
-Name: Role - Contact Information
+Name: [Flavio Avdulla](https://github.com/FlavioAvdulla)
+Name: [Stilian Saka](https://github.com/StilianSaka)
+Name: [Hans Sora](https://github.com/HansSora)
+Name: [Gerti Bajo](https://github.com/Gerti23)
