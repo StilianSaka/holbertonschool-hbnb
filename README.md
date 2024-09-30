@@ -17,6 +17,7 @@ The application follows a layered architecture to separate the responsibilities 
 - Each user has a first name, last name, email, and password.
 - Users can be identified as administrators through a boolean attribute.
 - Users should be able to register, update their profile information, and be deleted.
+![registration](https://github.com/user-attachments/assets/e0d3f812-037a-45ec-ade3-675ffee21401)
 
 ### Place Entity
 - Each place has a title, description, price, latitude, and longitude.
@@ -27,6 +28,7 @@ The application follows a layered architecture to separate the responsibilities 
 ### Review Entity
 - Each review is associated with a specific place and user, and includes a rating and comment.
 - Reviews can be created, updated, deleted, and listed by place.
+![review](https://github.com/user-attachments/assets/0bc0b4bf-3eb3-4348-a866-7b1d73f99dda)
 
 ### Amenity Entity
 - Each amenity has a name, and description.
@@ -34,6 +36,8 @@ The application follows a layered architecture to separate the responsibilities 
  "Cozy Apartment").
 - **Price**: A float value representing the cost per night.
 - **Latitude/Longitude**: Coordinates used to map the place's location.
+![list-of-places](https://github.com/user-attachments/assets/029eb8c1-56e6-4e4c-b864-daf0ad4948cc)
+
 ## UML Documentation and Diagrams
 ### High-Level Package Diagram
 **The HBnB Evolution application follows a three-layered architecture**:
