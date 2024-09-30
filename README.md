@@ -11,19 +11,27 @@ In this phase, we are focusing on documenting the technical architecture of the 
 - **Amenity Management**: Amenities such as Wi-Fi or parking can be added to places.
 The application follows a layered architecture to separate the responsibilities between the presentation, business logic, and persistence layers.
 ## Business Rules and Requirements
+
+
 ### User Entity
-- **Attributes**: First name, Last name, Email, Password, Admin status.
-- **Operations**: Register, update profile, delete account.
-Example:
-- **First Name**: A string representing the user’s first name.
-- **Last Name**: A string representing the user’s last name.
-- **Email**: A unique identifier for each user.
-- **Password**: Used for authentication, stored securely (hashed).
-- **Admin Status**: Boolean flag to determine if a user is an admin.
+- Each user has a first name, last name, email, and password.
+- Users can be identified as administrators through a boolean attribute.
+- Users should be able to register, update their profile information, and be deleted.
+
 ### Place Entity
-- **Attributes**: Title, description, price, latitude, longitude, owner, list of amenities.
-Example:
-- **Title**: A string representing the place's title (e.g., "Cozy Apartment").
+- Each place has a title, description, price, latitude, and longitude.
+- Places are associated with the user who created them (owner).
+- Places can have a list of amenities.
+- Places can be created, updated, deleted, and listed.
+
+### Review Entity
+- Each review is associated with a specific place and user, and includes a rating and comment.
+- Reviews can be created, updated, deleted, and listed by place.
+
+### Amenity Entity
+- Each amenity has a name, and description.
+- Amenities can be created, updated, deleted, and listed.
+ "Cozy Apartment").
 - **Price**: A float value representing the cost per night.
 - **Latitude/Longitude**: Coordinates used to map the place's location.
 ## UML Documentation and Diagrams
@@ -38,12 +46,12 @@ In the high-level package diagram, we depict the three main layers of the HBnB E
 - **Business Logic Layer**: Includes the core business logic and models.
 - **Persistence Layer**: Manages data storage.
 
-![HBnB---UML_High-Level-Package-Diagram](https://github.com/user-attachments/assets/4f400db1-537b-49e7-811f-f50bc68f3605)
+![HBnB---UML_High-Level-Package-Diagram](https://github.com/user-attachments/assets/e82d28b2-5a1a-4fac-a680-7c8fd855e944)
 
 ## Detailed Class Diagram for Business Logic Layer
 The class diagram for the Business Logic Layer consists of four main entities:  **User**, **Place**, **Review**, and **Amenity**. 
 
-![HBnB---UML](https://github.com/user-attachments/assets/e1a66de0-02e9-497f-a798-87d32d14077e)
+![HBnB - UML](https://github.com/user-attachments/assets/6ee8375a-96d3-4c8b-ad09-f8757f4e08c7)
 
 ## Entities
 ### User
@@ -70,10 +78,10 @@ Description: The Place class represents a place that can be owned by a user. It 
 Description: The Amenity class represents an amenity that can be associated with a place. It includes attributes like name and description. The key methods for this class are update_amenity() and delete_amenity(), which allow for updating and deleting amenities.
 
 ## Collaborators
-Name: [Flavio Avdulla](https://github.com/FlavioAvdulla)
+- [Flavio Avdulla](https://github.com/FlavioAvdulla)
 
-Name: [Stilian Saka](https://github.com/StilianSaka)
+- [Stilian Saka](https://github.com/StilianSaka)
 
-Name: [Hans Sora](https://github.com/HansSora)
+- [Hans Sora](https://github.com/HansSora)
 
-Name: [Gerti Bajo](https://github.com/Gerti23)
+- [Gerti Bajo](https://github.com/Gerti23)
