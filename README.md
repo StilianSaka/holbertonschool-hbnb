@@ -49,10 +49,20 @@ In the high-level package diagram, we depict the three main layers of the HBnB E
 
 ![HBnB---UML_High-Level-Package-Diagram](https://github.com/user-attachments/assets/e82d28b2-5a1a-4fac-a680-7c8fd855e944)
 
-## Detailed Class Diagram for Business Logic Layer
+### Detailed Class Diagram for Business Logic Layer
 The class diagram for the Business Logic Layer consists of four main entities:  **User**, **Place**, **Review**, and **Amenity**. 
 
 ![HBnB - UML](https://github.com/user-attachments/assets/6ee8375a-96d3-4c8b-ad09-f8757f4e08c7)
+
+### High-Level Squence diagram
+### **User Registration**: A user signs up for a new account.
+![registration](https://github.com/user-attachments/assets/2fdf05fb-5084-4f25-b98b-11bad1fc74c3)
+### **Place Creation**: A user creates a new place listing.
+![create-place](https://github.com/user-attachments/assets/9ff294e3-ad6e-4263-9993-6df9d3ccccea)
+### **Review Submission**: A user submits a review for a place.
+![review](https://github.com/user-attachments/assets/f9e94e5f-f530-4b8b-98d9-d131a5c2b570)
+### **Fetching a List of Places**: A user requests a list of places based on certain criteria.
+![list-of-places](https://github.com/user-attachments/assets/d4b93437-7ce9-49a2-ac53-4b977db713dd)
 
 ## Entities
 ### User
