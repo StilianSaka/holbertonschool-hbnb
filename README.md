@@ -55,6 +55,7 @@ The class diagram for the Business Logic Layer consists of four main entities:  
 ![HBnB - UML](https://github.com/user-attachments/assets/6ee8375a-96d3-4c8b-ad09-f8757f4e08c7)
 
 ### High-Level Squence diagram
+
 ### **User Registration**: A user signs up for a new account.
 ![registration](https://github.com/user-attachments/assets/2fdf05fb-5084-4f25-b98b-11bad1fc74c3)
 ### **Place Creation**: A user creates a new place listing.
