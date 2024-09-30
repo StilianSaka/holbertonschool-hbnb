@@ -46,12 +46,28 @@ The class diagram for the Business Logic Layer consists of four main entities:  
 ![HBnB---UML](https://github.com/user-attachments/assets/e1a66de0-02e9-497f-a798-87d32d14077e)
 
 ## Entities
+### User
 
 The User class includes attributes like first name, last name, email, password, and an `is_admin` flag to distinguish administrators from regular users. The key methods for this class are `register()`, `update_profile()`, and `delete_account()`, which allow users to manage their accounts. 
 Relationships
 - A User can own multiple Places.
 - A Place can have multiple Amenities and multiple Reviews.
 - A Review is associated with a User and a Place.
+
+### Review
+
+Description: The Review class represents a review that a user can leave for a place. It includes attributes like user (a User object), place (a Place object), rating, and comment. The key methods for this class are update_review() and delete_review(), which allow for updating and deleting reviews.
+- A Review is associated with a User and a Place.
+
+### Place
+
+Description: The Place class represents a place that can be owned by a user. It includes attributes like name, location, owner (a User object), amenities (a list of Amenity objects), and reviews (a list of Review objects). The key methods for this class are add_amenity(), add_review(), update_place(), and delete_place(), which allow for managing the place and its associated amenities and reviews.
+- A User can own multiple Places.
+- A Place can have multiple Amenities and multiple Reviews.
+
+### Amenity
+
+Description: The Amenity class represents an amenity that can be associated with a place. It includes attributes like name and description. The key methods for this class are update_amenity() and delete_amenity(), which allow for updating and deleting amenities.
 
 ## Collaborators
 Name: [Flavio Avdulla](https://github.com/FlavioAvdulla)
