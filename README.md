@@ -57,9 +57,9 @@ The class diagram for the Business Logic Layer consists of four main entities:  
 ### High-Level Squence diagram
 
 ### **User Registration**: A user signs up for a new account.
-![registration](https://github.com/user-attachments/assets/2fdf05fb-5084-4f25-b98b-11bad1fc74c3)
+![registration](https://github.com/user-attachments/assets/cece8985-64b2-446e-bea2-9f1868f02856)
 ### **Place Creation**: A user creates a new place listing.
-![create-place](https://github.com/user-attachments/assets/9ff294e3-ad6e-4263-9993-6df9d3ccccea)
+![create-place](https://github.com/user-attachments/assets/2730ee67-ec04-400c-a615-c82e97f2c22b)
 ### **Review Submission**: A user submits a review for a place.
 ![review](https://github.com/user-attachments/assets/f9e94e5f-f530-4b8b-98d9-d131a5c2b570)
 ### **Fetching a List of Places**: A user requests a list of places based on certain criteria.
