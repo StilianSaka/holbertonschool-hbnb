@@ -61,9 +61,9 @@ The class diagram for the Business Logic Layer consists of four main entities:  
 ### **Place Creation**: A user creates a new place listing.
 ![create-place](https://github.com/user-attachments/assets/583a6e1e-9f83-455d-948d-625910f1275e)
 ### **Review Submission**: A user submits a review for a place.
-![review](https://github.com/user-attachments/assets/f9e94e5f-f530-4b8b-98d9-d131a5c2b570)
+![review](https://github.com/user-attachments/assets/529f86d3-99a5-4a62-8323-48fd45c62ca5)
 ### **Fetching a List of Places**: A user requests a list of places based on certain criteria.
-![list-of-places](https://github.com/user-attachments/assets/d4b93437-7ce9-49a2-ac53-4b977db713dd)
+![list-of-places](https://github.com/user-attachments/assets/064425f2-4e88-403c-b12a-3cd8d184d492)
 
 ## Entities
 ### User
