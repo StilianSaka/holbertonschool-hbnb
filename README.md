@@ -56,19 +56,63 @@ The class diagram for the Business Logic Layer consists of four main entities:  
 
 ### High-Level Squence diagram
 
-**User Registration**: A user signs up for a new account.
+**1. User Registration**
+Description: This sequence diagram illustrates the process of a user signing up for a new account. It shows the interaction between the Presentation Layer (API), Business Logic Layer (User Model), and Persistence Layer (Database).
+
+Flow:
+
+User sends a registration request to the API.
+API validates the input data.
+API calls the User Model to create a new user.
+User Model processes the data and interacts with the Database to store the new user information.
+Database confirms the data is saved.
+User Model returns a success message to the API.
+API sends a confirmation response back to the User.
 ![registration](https://github.com/user-attachments/assets/c3d4c558-ca05-4164-a359-8a7e157dd7e0)
 
 
-**Place Creation**: A user creates a new place listing.
+**2. Place Creation**
+Description: This sequence diagram represents the process of a user creating a new place listing. It details the interactions between the Presentation Layer (API), Business Logic Layer (Place Model), and Persistence Layer (Database).
+
+Flow:
+
+User sends a place creation request to the API.
+API validates the input data.
+API calls the Place Model to create a new place.
+Place Model processes the data and interacts with the Database to store the new place information.
+Database confirms the data is saved.
+Place Model returns a success message to the API.
+API sends a confirmation response back to the User.
 ![create-place](https://github.com/user-attachments/assets/583a6e1e-9f83-455d-948d-625910f1275e)
 
 
-**Review Submission**: A user submits a review for a place.
+**3. Review Submission**
+Description: This sequence diagram shows the process of a user submitting a review for a place. It highlights the interactions between the Presentation Layer (API), Business Logic Layer (Review Model), and Persistence Layer (Database).
+
+Flow:
+
+User sends a review submission request to the API.
+API validates the input data.
+API calls the Review Model to create a new review.
+Review Model processes the data and interacts with the Database to store the new review information.
+Database confirms the data is saved.
+Review Model returns a success message to the API.
+API sends a confirmation response back to the User.
 ![review](https://github.com/user-attachments/assets/529f86d3-99a5-4a62-8323-48fd45c62ca5)
 
 
-**Fetching a List of Places**: A user requests a list of places based on certain criteria.
+4. Fetching a List of Places
+Description: This sequence diagram illustrates the process of a user requesting a list of places based on certain criteria. It shows the interaction between the Presentation Layer (API), Business Logic Layer (Place Model), and Persistence Layer (Database).
+
+Flow:
+
+User sends a request for a list of places to the API.
+API validates the input criteria.
+API calls the Place Model to fetch the list of places.
+Place Model interacts with the Database to retrieve the relevant place information.
+Database returns the list of places to the Place Model.
+Place Model processes the data and returns the list to the API.
+API sends the list of places back to the User.
 ![list-of-places](https://github.com/user-attachments/assets/064425f2-4e88-403c-b12a-3cd8d184d492)
 
 ## Entities
