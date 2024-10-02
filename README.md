@@ -81,7 +81,7 @@ Description: The Amenity class represents an amenity that can be associated with
 
 ### High-Level Squence diagram
 
-**1. User Registration**
+### 1. User Registration
 
 Description: This sequence diagram illustrates the process of a user signing up for a new account. It shows the interaction between the Presentation Layer (API), Business Logic Layer (User Model), and Persistence Layer (Database).
 
@@ -96,7 +96,7 @@ User Model returns a success message to the API.
 API sends a confirmation response back to the User.
 ![registration](https://github.com/user-attachments/assets/c3d4c558-ca05-4164-a359-8a7e157dd7e0)
 
-**2. Place Creation**
+### 2. Place Creation
 
 Description: This sequence diagram represents the process of a user creating a new place listing. It details the interactions between the Presentation Layer (API), Business Logic Layer (Place Model), and Persistence Layer (Database).
 
@@ -111,7 +111,7 @@ Place Model returns a success message to the API.
 API sends a confirmation response back to the User.
 ![create-place](https://github.com/user-attachments/assets/583a6e1e-9f83-455d-948d-625910f1275e)
 
-**3. Review Submission**
+### 3. Review Submission
 
 Description: This sequence diagram shows the process of a user submitting a review for a place. It highlights the interactions between the Presentation Layer (API), Business Logic Layer (Review Model), and Persistence Layer (Database).
 
@@ -126,7 +126,7 @@ Review Model returns a success message to the API.
 API sends a confirmation response back to the User.
 ![review](https://github.com/user-attachments/assets/529f86d3-99a5-4a62-8323-48fd45c62ca5)
 
-4. Fetching a List of Places
+### 4. Fetching a List of Places
 
 Description: This sequence diagram illustrates the process of a user requesting a list of places based on certain criteria. It shows the interaction between the Presentation Layer (API), Business Logic Layer (Place Model), and Persistence Layer (Database).
 
