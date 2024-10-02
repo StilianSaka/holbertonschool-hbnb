@@ -94,7 +94,7 @@ User Model processes the data and interacts with the Database to store the new u
 Database confirms the data is saved.
 User Model returns a success message to the API.
 API sends a confirmation response back to the User.
-![registration](https://github.com/user-attachments/assets/c3d4c558-ca05-4164-a359-8a7e157dd7e0)
+![register_user](https://github.com/user-attachments/assets/0f88ffba-d03c-4b79-b054-b01eda1ad4ab)
 
 ### 2. Place Creation
 
@@ -109,7 +109,7 @@ Place Model processes the data and interacts with the Database to store the new 
 Database confirms the data is saved.
 Place Model returns a success message to the API.
 API sends a confirmation response back to the User.
-![create-place](https://github.com/user-attachments/assets/583a6e1e-9f83-455d-948d-625910f1275e)
+![create_place](https://github.com/user-attachments/assets/0ab5fb75-84f7-4846-861c-ad8644ebf520)
 
 ### 3. Review Submission
 
