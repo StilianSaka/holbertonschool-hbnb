@@ -127,7 +127,7 @@ Database confirms the data is saved.
 Review Model returns a success message to the API.
 API sends a confirmation response back to the User.
 
-![review](https://github.com/user-attachments/assets/529f86d3-99a5-4a62-8323-48fd45c62ca5)
+![create-review](https://github.com/user-attachments/assets/f9cd4695-6073-4838-acd9-38c1c8f0be3a)
 
 ### 4. Fetching a List of Places
 
@@ -143,7 +143,7 @@ Database returns the list of places to the Place Model.
 Place Model processes the data and returns the list to the API.
 API sends the list of places back to the User.
 
-![list-of-places](https://github.com/user-attachments/assets/064425f2-4e88-403c-b12a-3cd8d184d492)
+![list-of-places](https://github.com/user-attachments/assets/cb2757bb-73dd-4278-ae97-1382b1d5dfeb)
 
 ## Collaborators
 - [Flavio Avdulla](https://github.com/FlavioAvdulla)
