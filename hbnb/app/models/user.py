@@ -26,7 +26,7 @@ class User:
 	@property
     def first_name(self):
         return self._first_name
-    
+
 	@first_name.setter
     def first_name(self, value):
 		if len(value) <= 50:
@@ -52,7 +52,7 @@ class User:
 	@property
     def email(self):
 		return self._email
-    
+
     @email.setter
     def email(self, value):
         """Setter for prop last_name"""
@@ -94,7 +94,7 @@ class User:
 
 	def add_review(self, review):
         self.reviews.append(review)
-		
+
 # ============================ Check if Email Exists (Static Method)
 
 	@staticmethod
