@@ -21,6 +21,8 @@ class User:
         self.places = []
         self.reviews = []
 
+# ============================ "first_name" Property with Getter and Setter
+
 	@property
     def first_name(self):
         return self._first_name
@@ -32,6 +34,8 @@ class User:
 		else:
             raise ValueError("Invalid first name")
 
+# ============================ "last_name" Property with Getter and Setter
+
     @property
     def last_name(self):
         return self._last_name
@@ -42,7 +46,9 @@ class User:
 			self._last_name = value.strip()
 		else:
         	raise ValueError("Invalid last name")
-              
+
+# ============================ "email" Property with Getter and Setter
+
 	@property
     def email(self):
 		return self._email
@@ -60,8 +66,9 @@ class User:
             if email_exists:
                 raise ValueError("Email already exists!")
 			raise ValueError("Invalid email format!")
-		
-        
+
+# ============================ "is_admin" Property with Getter and Setter
+
 	@property
     def is_admin(self):
         return self._is_admin
@@ -72,20 +79,30 @@ class User:
             self._is_admin = value
         else:
             raise ValueError("Invalid Value")
-    
+
+# ============================ # Save and Update Timestamp
+
 	def save(self):
         self.update_at = datetime.now()
     
+# ============================ Add Place to List
+
 	def add_place(self, place):
         self.places.append(place)
-    
+
+# ============================ Add Review to List
+
 	def add_review(self, review):
         self.reviews.append(review)
-        
+		
+# ============================ Check if Email Exists (Static Method)
+
 	@staticmethod
 	def email_exists(email):
         pass
-    
+
+# ============================ Check if User Exists (Static Method)
+
 	@staticmethod
     def user_exists(user):
         pass

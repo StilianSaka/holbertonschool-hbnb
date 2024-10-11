@@ -22,6 +22,7 @@ class Place:
         self.amenities = []
 
 # ============================ Title Property with Getter and Setter
+
     @property
     def title(self):
         return self._title
