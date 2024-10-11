@@ -21,7 +21,7 @@ class Place:
         self.reviews = []
         self.amenities = []
 
-# ============================ Title Attribute
+# ============================ Title Property with Getter and Setter
     @property
     def title(self):
         return self._title
@@ -33,7 +33,7 @@ class Place:
         else:
             raise ValueError("Invalid title")
 
-# ============================ Description Attribute
+# ============================ Description Property with Getter and Setter
 
     @property
     def description(self):
@@ -43,7 +43,7 @@ class Place:
     def description(self, value):
         self._description = value()
 
-# ============================ Price Attribute
+# ============================ Price Property with Getter and Setter
 
     @property
     def price(self):
@@ -56,33 +56,32 @@ class Place:
         else:
             raise ValueError("Price must be positive")
 
-# ============================ Latitude Attribute
+# ============================ Latitude Property with Getter and Setter
 
     @property
     def latitude(self):
         return self._latitude
-	
-	@latitude.setter
-	def latitude(self, value):
-		if latitude -90 <= latitude <= 90:
-			self._latitude = value
-		else:
-			raise ValueError("Invalid Value")
 
-# ============================ Longitude Attribute
+        @latitude.setter
+        def latitude(self, value):
+            if latitude - 90 <= latitude <= 90:
+                self._latitude = value
+            else:
+                raise ValueError("Invalid Value")
 
-	@property
-	def longitude(self):
-		return self._latitude
+# ============================ Longitude Property with Getter and Setter
 
-	@longitude.setter
-	def longitude -180 <= longitude <= 180:
-		self._longitude = value
-	else:
-		raise ValueError("Invalid Value")
+        @property
+        def longitude(self):
+            return self._latitude
 
+        @longitude.setter
+        def longitude - 180 <= longitude <= 180:
+            self._longitude = value
+        else:
+            raise ValueError("Invalid Value")
 
-# ============================ Onwner Attribute
+# ============================ Onwner Property with Getter and Setter
 
     @property
     def owner(self, value):
