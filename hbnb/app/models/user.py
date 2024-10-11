@@ -7,6 +7,9 @@ class User:
         self.email = email
         self.password = password
         self.is_admin = is_admin
+
+	def register(self):
+		return f"The user {self.name} {self.last_name} is registered."
         
     def update(self, first_name=None, last_name=None, email=None, password=None):
 
@@ -26,6 +29,14 @@ class User:
 			self.is_admin = is_admin
 		return f"User {self.first_name} {self.last_name} is Updated"
 		
+		
+
+	def delete_user(self):
+		return f"The user {self.first_name} {self.last_name} is deleted."
+
+	def list_user_info(self):
+		return f"The user info is: {self.first_name}, {self.last_name}, {self.email}, {self.password}"
 
 	def full_name(self):
-		return f"{self.first_name} {self.last_name}"
+		return f" The user fullname is: {self.first_name}, {self.last_name}"
+	
