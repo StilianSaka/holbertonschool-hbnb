@@ -64,19 +64,19 @@ class Place:
 	
 	@latitude.setter
 	def latitude(self, value):
-		if latitude is not None and -90 <= latitude <= 90:
+		if latitude -90 <= latitude <= 90:
 			self._latitude = value
 		else:
 			raise ValueError("Invalid Value")
 
-# ============================ Latitude Attribute
+# ============================ Longitude Attribute
 
 	@property
 	def longitude(self):
 		return self._latitude
 
 	@longitude.setter
-	def longitude is not None and -180 <= longitude <= 180:
+	def longitude -180 <= longitude <= 180:
 		self._longitude = value
 	else:
 		raise ValueError("Invalid Value")
