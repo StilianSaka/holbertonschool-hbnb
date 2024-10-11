@@ -89,5 +89,3 @@ class User:
 	@staticmethod
     def user_exists(user):
         pass
-	
-    
