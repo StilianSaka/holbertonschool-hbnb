@@ -90,6 +90,8 @@ class Place:
         else:
             raise ValueError("Invalid type")
 
+# ============================
+
     def save(self):
     self.update_at = datetime.now()
 
