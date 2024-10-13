@@ -1,0 +1,79 @@
+import uuid
+from datetime import datetime
+
+class Review:
+    """ Review class """
+
+    def __init__(self, text, rating, place, user):
+        """Constructor for Review"""
+        if text is None or rating is None or place is None or user is None:
+            raise ValueError("Required attributes not specified!")
+
+        self.id = str(uuid.uuid4())
+        self.text = text
+        self.rating = rating
+        self.place = place
+        self.user = user
+        self.created_at = datetime.now()
+        self.updated_at = datetime.now()
+
+    # --- Getters and Setters ---
+
+    @property
+    def text(self):
+        """Getter for text"""
+        return self._text
+
+    @text.setter
+    def text(self, value):
+        """Setter for text"""
+        if len(value.strip()) > 0:
+            self._text = value.strip()
+        else:
+            raise ValueError("Review text cannot be empty!")
+
+    @property
+    def rating(self):
+        """Getter for rating"""
+        return self._rating
+
+    @rating.setter
+    def rating(self, value):
+        """Setter for rating"""
+        if isinstance(value, int) and 1 <= value <= 5:
+            self._rating = value
+        else:
+            raise ValueError("Rating must be an integer between 1 and 5!")
+
+    @property
+    def place(self):
+        """Getter for place"""
+        return self._place
+
+    @place.setter
+    def place(self, value):
+        """Setter for place"""
+        from app.services import facade
+        if facade.get_place_by_id(value.id):
+            self._place = value
+        else:
+            raise ValueError("Invalid place or place does not exist!")
+
+    @property
+    def user(self):
+        """Getter for user"""
+        return self._user
+
+    @user.setter
+    def user(self, value):
+        """Setter for user"""
+        from app.services import facade
+        if facade.get_user_by_id(value.id):
+            self._user = value
+        else:
+            raise ValueError("Invalid user or user does not exist!")
+
+    # --- Methods ---
+    def save(self):
+        """Update the updated_at timestamp whenever the object is modified"""
+        self.updated_at = datetime.now()
