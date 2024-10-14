@@ -108,4 +108,3 @@ class Place:
     @staticmethod
     def place_exists(place):
         pass
-
