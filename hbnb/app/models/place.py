@@ -3,12 +3,10 @@ import uuid
 from datetime import datetime
 from app.models.user import User
 
-
 class Place:
     def __init__(self, title, description, price, latitude, longitude, owner):
         if title is None or latitude is None or longitude is None:
             raise ValueError("Attributes are required.")
-
         self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
@@ -22,6 +20,7 @@ class Place:
         self.amenities = []
 
 # ============================ Title Property with Getter and Setter
+
     @property
     def title(self):
         return self._title
@@ -41,7 +40,7 @@ class Place:
 
     @description.setter
     def description(self, value):
-        self._description = value()
+        self._description = value
 
 # ============================ Price Property with Getter and Setter
 
@@ -51,7 +50,7 @@ class Place:
 
     @price.setter
     def price(self, value):
-        if isinstance(value, float) and value > 0:
+        if isinstance(value, (float, int)) and value > 0:
             self._price = value
         else:
             raise ValueError("Price must be positive")
@@ -62,45 +61,50 @@ class Place:
     def latitude(self):
         return self._latitude
 
-        @latitude.setter
-        def latitude(self, value):
-            if latitude - 90 <= latitude <= 90:
-                self._latitude = value
-            else:
-                raise ValueError("Invalid Value")
+    @latitude.setter
+    def latitude(self, value):
+        if -90 <= value <= 90:
+            self._latitude = value
+        else:
+            raise ValueError("Invalid value")
 
 # ============================ Longitude Property with Getter and Setter
 
-        @property
-        def longitude(self):
-            return self._latitude
+    @property
+    def longitude(self):
+        return self._longitude
 
-        @longitude.setter
-        def longitude - 180 <= longitude <= 180:
+    @longitude.setter
+    def longitude(self, value):
+        if -180 <= value <= 180:
             self._longitude = value
         else:
-            raise ValueError("Invalid Value")
+            raise ValueError("Invalid value")
 
-# ============================ Onwner Property with Getter and Setter
+# ============================ Owner Property with Getter and Setter
 
     @property
+    def owner(self):
+        return self._owner
+
+    @owner.setter
     def owner(self, value):
         if isinstance(value, User):
-            self._owner = owner
+            self._owner = value
         else:
             raise ValueError("Invalid type")
 
-# ============================
+
 
     def save(self):
-    self.update_at = datetime.now()
+        self.updated_at = datetime.now()
 
     def add_review(self, review):
-    self.reviews.append(review)
+        self.reviews.append(review)
 
     def add_amenity(self, amenity):
-    self.amenities.append(amenity)
+        self.amenities.append(amenity)
 
     @staticmethod
     def place_exists(place):
-    pass
+        pass
