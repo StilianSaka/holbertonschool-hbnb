@@ -4,15 +4,12 @@ from datetime import datetime
 
 class Amenity:
     def __init__(self, name):
-        if not name or not isinstance(name, str):
-            raise ValueError("Name is required and must be a string.")
-        if len(name) > 50:
-            raise ValueError("Name cannot exceed 50 characters.")
         
         self.id = str(uuid.uuid4())
-        self.name = name.strip()
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
+        self.name = name
+
 
 # ============================ Name Property with Getter and Setter
 
