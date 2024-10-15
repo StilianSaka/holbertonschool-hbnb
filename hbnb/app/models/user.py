@@ -8,7 +8,7 @@ import re
 
 from datetime import datetime
 
-
+from app.services import facade
 
 class User:
 
@@ -132,25 +132,19 @@ class User:
 
 
 
-    @property
+        @property
+        def email(self):
 
-    def email(self):
+            return self._email
 
-        """Getter for prop email"""
+        @email.setter
+        def email(self, value):
+            is_valid_email = re.search("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$", value.strip())
+        if is_valid_email:
+            self._email = value.strip()
+        else:
+            raise ValueError("Invalid email format!")
 
-        return self._email
-
-
-
-    @email.setter
-
-    def email(self, value):
-
-        """Setter for prop last_name"""
-
-        # calls the method in the facade object
-
-        from app.services import facade
 
 
 

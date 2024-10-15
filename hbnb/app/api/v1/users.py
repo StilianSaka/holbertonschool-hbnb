@@ -1,5 +1,5 @@
 from flask_restx import Namespace, Resource, fields
-from app.services.facade import HBnBFacade
+
 
 api = Namespace('users', description='User operations')
 
@@ -10,7 +10,7 @@ user_model = api.model('User', {
     'email': fields.String(required=True, description='Email of the user')
 })
 
-facade = HBnBFacade()  # Create an instance of the Facade
+#facade = HBnBFacade()  # Create an instance of the Facade
 
 @api.route('/')
 class UserList(Resource):
@@ -21,19 +21,3 @@ class UserList(Resource):
     def post(self):
         """Register a new user"""
         user_data = api.payload
-
-        # Check if email already exists
-        existing_user = facade.get_user_by_email(user_data['email'])
-        
-        if existing_user:
-            return {'error': 'Email already registered'}, 400
-        
-        if not all([user_data.get("first_name"), user_data.get("last_name"), user_data.get("email")]):
-            return {'error': 'Invalid input data'}, 400 
-
-        try:
-            new_user = facade.create_user(user_data)
-        except ValueError:
-            return {'error': 'Invalid input data'}, 400
-        
-        return {'id': str(new_user.id), 'message': "user created successfully"}, 201
