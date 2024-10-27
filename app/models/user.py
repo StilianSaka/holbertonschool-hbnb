@@ -76,20 +76,14 @@ class User:
 
     @email.setter
     def email(self, value):
-        """Setter for prop last_name"""
-        # calls the method in the facade object
-        from app.services import facade
+        """Setter for email"""
 
-        # add a simple regex check for email format. Nothing too fancy.
-        is_valid_email = len(value.strip()) > 0 and re.search("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$", value)
-        email_exists = facade.get_user_by_email(value.strip())
-        if is_valid_email and not email_exists:
-            self._email = value
-        else:
-            if email_exists:
-                raise ValueError("Email already exists!")
+    is_valid_email = re.search("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$", value.strip())
+    if is_valid_email:
+        self._email = value.strip()
+    else:
+        raise ValueError("Invalid email format!")
 
-            raise ValueError("Invalid email format!")
 
     @property
     def is_admin(self):
