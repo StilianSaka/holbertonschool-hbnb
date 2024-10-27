@@ -80,7 +80,7 @@ class User:
         """Setter for prop last_name"""
         from app.services.facade import HBnBFacade
         facade = HBnBFacade()
-        
+
         is_valid_email = len(value.strip()) > 0 and re.search("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$", value)
         email_exists = facade.get_user_by_email(value.strip())
         print(f"Setting email: {value}, is_valid_email: {is_valid_email}, email_exists: {email_exists}")
@@ -119,6 +119,18 @@ class User:
     def add_review(self, review):
         """Add a review to the user."""
         self.reviews.append(review)
+    
+    def update_profile(self, first_name=None, last_name=None, email=None, password=None):
+        """ Update the user's profile with provided details """
+        if first_name:
+            self.first_name = first_name
+        if last_name:
+            self.last_name = last_name
+        if email:
+            self.email = email
+        if password:
+            self.password = password
+        self.updated_at = datetime.now()
 
     @staticmethod
     def email_exists(email):
