@@ -109,7 +109,7 @@ class UserResource(Resource):
         if not user:
             return {'error': 'User not found'}, 404
 
-        if not all([user_data.get('first_name'), user_data.get('last_name'), user_data.get('email')]):
+        if not all([user_data.get('first_name'), user_data.get('last_name'), user_data.get('email'), user_data.get('password')]):
             return {'error': 'Invalid input data'}, 400
 
         # Update the user's profile with new data
