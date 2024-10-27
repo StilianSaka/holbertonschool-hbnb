@@ -82,6 +82,7 @@ class User:
 
         is_valid_email = len(value.strip()) > 0 and re.search("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$", value)
         email_exists = facade.get_user_by_email(value.strip())
+        print(f"Setting email: {value}, is_valid_email: {is_valid_email}, email_exists: {email_exists}")
         if is_valid_email and not email_exists:
             self._email = value
         else:

@@ -34,6 +34,7 @@ class UserList(Resource):
             status_code (int): 201 if creation is successful, otherwise 400 if email is already registered or if input data is invalid.
         """
         user_data = api.payload
+        print(f"Received payload: {user_data}")
 
         # Simulate email uniqueness check
         existing_user = facade.get_user_by_email(user_data['email'])
