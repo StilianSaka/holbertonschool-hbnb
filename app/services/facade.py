@@ -36,10 +36,10 @@ class HBnBFacade:
             if field not in user_data:
                 raise ValueError(f"Missing required field: {field}")
     
-            user = User(**user_data)
-            self.user_repo.add(user)
-            print(f"User created with ID: {user.id}")  # Debug print
-            return user
+        user = User(**user_data)
+        self.user_repo.add(user)
+        print(f"User created with ID: {user.id}")  # Debug print
+        return user
 
 
     def get_user(self, user_id):
