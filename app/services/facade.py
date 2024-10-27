@@ -31,19 +31,16 @@ class HBnBFacade:
 
 
     def create_user(self, user_data):
-        """
-        Create a new user and add it to the user repository.
+        required_fields = ['first_name', 'last_name', 'email', 'password']
+        for field in required_fields:
+            if field not in user_data:
+                raise ValueError(f"Missing required field: {field}")
+    
+            user = User(**user_data)
+            self.user_repo.add(user)
+            print(f"User created with ID: {user.id}")  # Debug print
+            return user
 
-        Args:
-            user_data (dict): User attributes including 'first_name', 'last_name', 'email', and 'password'.
-
-        Returns:
-            User: The created User object.
-        """
-        user = User(**user_data)
-        self.user_repo.add(user)
-        print(f"User created with ID: {user.id}")  # Debug print
-        return user
 
     def get_user(self, user_id):
         """
