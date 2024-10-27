@@ -78,8 +78,9 @@ class User:
     @email.setter
     def email(self, value):
         """Setter for prop last_name"""
-        from app.services import facade
-
+        from app.services.facade import HBnBFacade
+        facade = HBnBFacade()
+        
         is_valid_email = len(value.strip()) > 0 and re.search("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$", value)
         email_exists = facade.get_user_by_email(value.strip())
         print(f"Setting email: {value}, is_valid_email: {is_valid_email}, email_exists: {email_exists}")
