@@ -76,13 +76,18 @@ class User:
 
     @email.setter
     def email(self, value):
-        """Setter for email"""
+        """Setter for prop last_name"""
+        from app.services import facade
 
-    is_valid_email = re.search("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$", value.strip())
-    if is_valid_email:
-        self._email = value.strip()
-    else:
-        raise ValueError("Invalid email format!")
+        is_valid_email = len(value.strip()) > 0 and re.search("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$", value)
+        email_exists = facade.get_user_by_email(value.strip())
+        if is_valid_email and not email_exists:
+            self._email = value
+        else:
+            if email_exists:
+                raise ValueError("Email already exists!")
+
+            raise ValueError("Invalid email format!")
 
 
     @property
