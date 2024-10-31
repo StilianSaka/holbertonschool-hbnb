@@ -132,6 +132,25 @@ class User:
             self.password = password
         self.updated_at = datetime.now()
 
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'first_name': self.first_name,
+            'last_name': self.last_name,
+            'email': self.email,
+            'is_admin': self.is_admin,
+            'created_at': self.created_at.isoformat(),
+            'updated_at': self.updated_at.isoformat(),
+            'places': self.places,
+            'reviews': self.reviews
+        }
+
+    def update(self, data):
+        """ Update User attributes from a dictionary """
+        for key, value in data.items():
+            if hasattr(self, key):
+                setattr(self, key, value)
+
     @staticmethod
     def email_exists(email):
         """ Search through all Users to check the email exists """
