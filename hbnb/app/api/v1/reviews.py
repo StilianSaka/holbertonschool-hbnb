@@ -51,16 +51,7 @@ class ReviewList(Resource):
             status_code (int): 200 if retrieval is successful.
         """
         reviews = facade.get_all_reviews()
-        return [
-            {
-                'id': str(review.id),  # Ensure it's a dictionary
-                'text': review.get('text'),
-                'rating': review.get('rating'),
-                'place_id': review.get('place_id'),
-                'user_id': review.get('user_id')
-            }
-            for review in reviews
-        ], 200
+        return [review.to_dict() for review in reviews], 200
 
 @api.route('/<review_id>')
 class ReviewResource(Resource):

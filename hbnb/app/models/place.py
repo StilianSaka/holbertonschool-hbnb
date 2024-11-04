@@ -3,8 +3,8 @@ from datetime import datetime
 from app.models.user import User
 
 class Place:
-    def __init__(self, title, description, price, latitude, longitude, owner):
-        if title is None or description is None or price is None or latitude is None or longitude is None or owner is None:
+    def __init__(self, title, description, price, latitude, longitude, owner_id):
+        if title is None or description is None or price is None or latitude is None or longitude is None or owner_id is None:
             raise ValueError("Required attributes not specified!")
 
         self.id = str(uuid.uuid4())
@@ -15,20 +15,24 @@ class Place:
         self.price = price
         self.latitude = latitude
         self.longitude = longitude
-        self.owner = owner
+        self.owner_id = owner_id
         self.reviews = []  # relationship - List to store related reviews
         self.amenities = []  # relationship - List to store related amenities
+
+    def update(self, data):
+        """ Update Place attributes from a dictionary """
+        for key, value in data.items():
+            if hasattr(self, key):
+                setattr(self, key, value)
+        self.updated_at = datetime.now()
 
     # --- Getters and Setters ---
     @property
     def title(self):
-        """ Returns value of property title """
         return self._title
 
     @title.setter
     def title(self, value):
-        """Setter for prop title"""
-        # ensure that the value is up to 100 alphabets only after removing excess white-space
         is_valid_title = 0 < len(value.strip()) <= 100
         if is_valid_title:
             self._title = value.strip()
@@ -37,23 +41,18 @@ class Place:
 
     @property
     def description(self):
-        """ Returns value of property description """
         return self._description
 
     @description.setter
     def description(self, value):
-        """Setter for prop description"""
-        # Can't think of any special checks to perform here tbh
         self._description = value
 
     @property
     def price(self):
-        """ Returns value of property price """
         return self._price
 
     @price.setter
     def price(self, value):
-        """Setter for prop price"""
         if isinstance(value, float) and value > 0.0:
             self._price = value
         else:
@@ -61,12 +60,10 @@ class Place:
 
     @property
     def latitude(self):
-        """ Returns value of property latitude """
         return self._latitude
 
     @latitude.setter
     def latitude(self, value):
-        """Setter for prop latitude"""
         if isinstance(value, float) and -90.0 <= value <= 90.0:
             self._latitude = value
         else:
@@ -74,12 +71,10 @@ class Place:
 
     @property
     def longitude(self):
-        """ Returns value of property longitude """
         return self._longitude
 
     @longitude.setter
     def longitude(self, value):
-        """Setter for prop longitude"""
         if isinstance(value, float) and -180.0 <= value <= 180.0:
             self._longitude = value
         else:
@@ -87,12 +82,10 @@ class Place:
 
     @property
     def owner(self):
-        """ Returns value of property owner """
         return self._owner
 
     @owner.setter
     def owner(self, value):
-        """Setter for prop owner"""
         if isinstance(value, User):
             self._owner = value
         else:
@@ -110,6 +103,22 @@ class Place:
     def add_amenity(self, amenity):
         """Add an amenity to the place."""
         self.amenities.append(amenity)
+
+    def to_dict(self):
+        """ Convert Place object to dictionary """
+        return {
+            'id': self.id,
+            'title': self.title,
+            'description': self.description,
+            'price': self.price,
+            'latitude': self.latitude,
+            'longitude': self.longitude,
+            'owner_id': self.owner_id,
+            'created_at': self.created_at.isoformat(),
+            'updated_at': self.updated_at.isoformat(),
+            'reviews': self.reviews,
+            'amenities': self.amenities
+        }
 
     @staticmethod
     def place_exists(place_id):
